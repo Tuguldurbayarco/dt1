@@ -77,6 +77,7 @@
 	};
 
 	function triggerNextCover() {
+		if (running === false) return;
 		showNextCover = true;
 		console.log('showNextCover:', showNextCover); // true
 
