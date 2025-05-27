@@ -12,6 +12,7 @@
 	let tasks: Task[] = [];
 	let currentTask: Task | null = null;
 	let nextTask: Task | null = null;
+	let showNextCover = true;
 
 	const tick = () => {
 		const now = Date.now();
@@ -70,9 +71,20 @@
 		if (currentTask !== lastAlertedTask) {
 			playSound();
 			triggerVibration();
+			triggerNextCover();
 			lastAlertedTask = currentTask;
 		}
 	};
+
+	function triggerNextCover() {
+		showNextCover = true;
+		console.log('showNextCover:', showNextCover); // true
+
+		setTimeout(() => {
+			showNextCover = false;
+			console.log('showNextCover:', showNextCover); // false after 3 seconds
+		}, 5000);
+	}
 
 	function triggerVibration() {
 		if (navigator.vibrate) {
@@ -181,11 +193,20 @@
 			<p class="text-lg font-semibold">{nextTask.text}</p>
 		</div>
 	{/if}
+
+	{#if showNextCover}
+		<div
+			class="text-2x fixed top-0 left-0 flex h-full w-full flex-col items-center justify-center bg-white"
+		>
+			<p class="text-2xl font-bold text-blue-800">Next Objective:</p>
+			<p class="py-2 text-3xl font-semibold text-black">{currentTask?.text}</p>
+		</div>
+	{/if}
 </main>
 
 <style>
 	.task-alert {
-		animation: pulse 1s 4;
+		animation: pulse 1s 1;
 	}
 
 	@keyframes pulse {
