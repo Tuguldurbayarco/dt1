@@ -7,6 +7,7 @@
 	let running = false;
 	let timerInterval: any;
 	let stackingEnabled = false;
+	let audio: any;
 
 	let tasks: Task[] = [];
 	let currentTask: Task | null = null;
@@ -90,8 +91,7 @@
 	}
 
 	const playSound = () => {
-		const audio = new Audio('/ding.mp3'); // You can replace with any local sound
-		audio.play();
+		audio?.play();
 	};
 
 	let lastAlertedTask: Task | null = null;
@@ -110,6 +110,7 @@
 	};
 
 	onMount(() => {
+		audio = new Audio('/ding.mp3'); // You can replace with any local sound
 		restoreState();
 		if (running) {
 			start();
