@@ -72,7 +72,7 @@
 
 	function triggerVibration() {
 		if (navigator.vibrate) {
-			navigator.vibrate([300, 100, 300]); // pattern: vibrate-pause-vibrate
+			navigator.vibrate([300, 100, 300, 2000]); // pattern: vibrate-pause-vibrate
 		} else {
 			console.warn('Vibration API not supported on this device.');
 		}
