@@ -140,8 +140,8 @@
 
 	{#if currentTask}
 		<div class="task-alert rounded border border-yellow-400 bg-gray-800 p-4">
-			<h2 class="text-lg font-semibold text-yellow-300">Current Task</h2>
-			<p class="text-sm">{currentTask.text}</p>
+			<h2 class="text-lg text-white">Current Task</h2>
+			<p class="py-2 text-lg font-semibold text-yellow-300">{currentTask.text}</p>
 			<img src={currentTask.image ?? `./default-task.png`} alt={currentTask.text} />
 
 			<!-- <img
@@ -157,14 +157,14 @@
 			<h2 class="text-md font-semibold text-gray-300">
 				Next Up (at {nextTask.from.toFixed(1)} min)
 			</h2>
-			<p class="text-sm">{nextTask.text}</p>
+			<p class="text-lg font-semibold">{nextTask.text}</p>
 		</div>
 	{/if}
 </main>
 
 <style>
 	.task-alert {
-		animation: pulse 1s infinite;
+		animation: pulse 1s 4;
 	}
 
 	@keyframes pulse {
@@ -173,7 +173,7 @@
 			opacity: 1;
 		}
 		50% {
-			opacity: 0.5;
+			opacity: 0.4;
 		}
 	}
 </style>
