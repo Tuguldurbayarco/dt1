@@ -200,7 +200,7 @@
 			class="text-2x fixed top-0 left-0 flex h-full w-full flex-col items-center justify-center bg-white"
 		>
 			<p class="text-2xl font-bold text-blue-800">Next Objective:</p>
-			<p class="py-2 text-3xl font-semibold text-black">{currentTask?.text}</p>
+			<p class="mx-auto py-2 text-center text-3xl font-semibold text-black">{currentTask?.text}</p>
 		</div>
 	{/if}
 </main>
