@@ -63,7 +63,7 @@
 		currentTask = tasks.find((t) => currentTime >= t.from && currentTime < t.to) || null;
 		nextTask = tasks.find((t) => t.from > currentTime) || null;
 
-		if (currentTask?.sound && currentTask !== lastAlertedTask) {
+		if (currentTask !== lastAlertedTask) {
 			playSound();
 			triggerVibration();
 			lastAlertedTask = currentTask;
