@@ -12,7 +12,7 @@
 	let tasks: Task[] = [];
 	let currentTask: Task | null = null;
 	let nextTask: Task | null = null;
-	let showNextCover = true;
+	let showNextCover = false;
 
 	const tick = () => {
 		const now = Date.now();
