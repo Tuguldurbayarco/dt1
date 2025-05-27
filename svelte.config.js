@@ -13,7 +13,7 @@ const config = {
 			strict: true
 		}),
 		paths: {
-			base: dev ? '' : process.env.BASE_PATH || ''
+			base: dev ? '' : process.env.BASE_PATH || '/dt1'
 		}
 	}
 };

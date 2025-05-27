@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { baseTasks, stackingTasks, type Task } from '$lib/tasks';
+	import { base } from '$app/paths';
 
 	let startTime = 0;
 	let currentTime = 0;
@@ -142,11 +143,13 @@
 		<div class="task-alert rounded border border-yellow-400 bg-gray-800 p-4">
 			<h2 class="text-lg font-semibold text-yellow-300">Current Task</h2>
 			<p class="text-sm">{currentTask.text}</p>
-			<img
-				src={currentTask.image ?? '../../static/default-task.png'}
+			<img src={currentTask.image ?? `./default-task.png`} alt={currentTask.text} />
+
+			<!-- <img
+				src={currentTask.image ?? `${base}/static/default-task.png`}
 				alt="Task image"
 				class="mt-2 w-full rounded"
-			/>
+			/> -->
 		</div>
 	{/if}
 
