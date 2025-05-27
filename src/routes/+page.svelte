@@ -20,6 +20,7 @@
 	};
 
 	const start = () => {
+		triggerVibrationClick();
 		if (!running) {
 			startTime = Date.now() - currentTime * 60000;
 			timerInterval = setInterval(tick, 1000);
@@ -28,6 +29,7 @@
 	};
 
 	const pause = () => {
+		triggerVibrationClick();
 		if (running) {
 			clearInterval(timerInterval);
 			running = false;
@@ -35,6 +37,7 @@
 	};
 
 	const stop = () => {
+		triggerVibrationClick();
 		clearInterval(timerInterval);
 		running = false;
 		currentTime = 0;
@@ -72,7 +75,15 @@
 
 	function triggerVibration() {
 		if (navigator.vibrate) {
-			navigator.vibrate([300, 100, 300, 2000]); // pattern: vibrate-pause-vibrate
+			navigator.vibrate([300, 100, 300, 100, 300, 100, 300, 100, 300, 100, 300]); // pattern: vibrate-pause-vibrate
+		} else {
+			console.warn('Vibration API not supported on this device.');
+		}
+	}
+
+	function triggerVibrationClick() {
+		if (navigator.vibrate) {
+			navigator.vibrate([200]); // pattern: vibrate-pause-vibrate
 		} else {
 			console.warn('Vibration API not supported on this device.');
 		}
