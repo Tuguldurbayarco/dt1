@@ -65,9 +65,18 @@
 
 		if (currentTask?.sound && currentTask !== lastAlertedTask) {
 			playSound();
+			triggerVibration();
 			lastAlertedTask = currentTask;
 		}
 	};
+
+	function triggerVibration() {
+		if (navigator.vibrate) {
+			navigator.vibrate([300, 100, 300]); // pattern: vibrate-pause-vibrate
+		} else {
+			console.warn('Vibration API not supported on this device.');
+		}
+	}
 
 	const playSound = () => {
 		const audio = new Audio('/ding.mp3'); // You can replace with any local sound
