@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { baseTasks, stackingTasks, type Task } from '$lib/tasks';
-	import { base } from '$app/paths';
 
 	let startTime = 0;
 	let currentTime = 0;
@@ -122,7 +121,7 @@
 			min="0"
 			max="60"
 			placeholder="Start at minute"
-			class="w-full rounded px-2 py-1 text-black"
+			class="w-full rounded px-2 py-1 text-white"
 			on:change={(e) => setCustomMinute(parseFloat((e.target as HTMLInputElement).value || '0'))}
 		/>
 	</div>
