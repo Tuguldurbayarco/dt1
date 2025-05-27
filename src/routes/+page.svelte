@@ -100,7 +100,7 @@
 </script>
 
 <main class="mx-auto max-w-lg space-y-6 p-4">
-	<h1 class="text-center text-2xl font-bold text-yellow-300">Dota 1 Hard Support Guide</h1>
+	<!-- <h1 class="text-center text-2xl font-bold text-yellow-300">Dota 1 Hard Support Guide</h1> -->
 
 	<div class="flex items-center justify-center gap-2 font-mono text-3xl">
 		⏱️ {formatTime(currentTime)}
