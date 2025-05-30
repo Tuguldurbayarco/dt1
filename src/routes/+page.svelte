@@ -176,7 +176,13 @@
 		<div class="task-alert rounded border border-yellow-400 bg-gray-800 p-4">
 			<h2 class="text-lg text-white">Current Task</h2>
 			<p class="py-2 text-lg font-semibold text-yellow-300">{currentTask.text}</p>
-			<img src={currentTask.image ?? `./default-task.png`} alt={currentTask.text} />
+			<div class="flex h-[350px] max-h-[350px] justify-center">
+				<img
+					src={currentTask.image ?? `./default-task.png`}
+					alt={currentTask.text}
+					style="object-fit: cover;"
+				/>
+			</div>
 
 			<!-- <img
 				src={currentTask.image ?? `${base}/static/default-task.png`}

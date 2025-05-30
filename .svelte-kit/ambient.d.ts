@@ -26,6 +26,7 @@
  * ```
  */
 declare module '$env/static/private' {
+	export const PYENV_VIRTUALENV_INIT: string;
 	export const GJS_DEBUG_TOPICS: string;
 	export const LESSOPEN: string;
 	export const LANGUAGE: string;
@@ -44,6 +45,7 @@ declare module '$env/static/private' {
 	export const DESKTOP_SESSION: string;
 	export const NVM_BIN: string;
 	export const npm_package_json: string;
+	export const PYENV_SHELL: string;
 	export const NVM_INC: string;
 	export const GIO_LAUNCHED_DESKTOP_FILE: string;
 	export const ROS_PYTHON_VERSION: string;
@@ -166,6 +168,7 @@ declare module '$env/static/public' {
  */
 declare module '$env/dynamic/private' {
 	export const env: {
+		PYENV_VIRTUALENV_INIT: string;
 		GJS_DEBUG_TOPICS: string;
 		LESSOPEN: string;
 		LANGUAGE: string;
@@ -184,6 +187,7 @@ declare module '$env/dynamic/private' {
 		DESKTOP_SESSION: string;
 		NVM_BIN: string;
 		npm_package_json: string;
+		PYENV_SHELL: string;
 		NVM_INC: string;
 		GIO_LAUNCHED_DESKTOP_FILE: string;
 		ROS_PYTHON_VERSION: string;
