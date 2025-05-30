@@ -9,8 +9,8 @@ export interface Task {
 }
 
 export const baseTasks: Task[] = [
-	{ from: 0, to: 0.5, text: 'Buy Observer + Sentry, Courier' },
-	{ from: 0.5, to: 1, text: 'Place rune ward, escort mid' },
+	{ from: 0, to: 0.5, text: 'Buy Observer + Sentry, Courier', image: './ward.jpeg' },
+	{ from: 0.5, to: 1, text: 'Place rune ward, escort mid', image: './ward_rune.jpeg' },
 	{ from: 1, to: 2.5, text: 'Place jungle vision, scout supports' },
 	{ from: 2.5, to: 4, text: 'Deward rune area, watch rotations' },
 	{ from: 4, to: 6, text: '📣 Smoke Gank #1: Mid/Offlane kill + ward' },
