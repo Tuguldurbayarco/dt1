@@ -159,7 +159,7 @@
 			on:change={(e) => setCustomMinute(parseFloat((e.target as HTMLInputElement).value || '0'))}
 		/>
 	</div>
-
+	<!-- 
 	<label class="flex items-center gap-2 text-sm">
 		<input
 			type="checkbox"
@@ -170,12 +170,12 @@
 			}}
 		/>
 		Show stacking tasks
-	</label>
+	</label> -->
 
 	{#if currentTask}
 		<div class="task-alert rounded border border-yellow-400 bg-gray-800 p-4">
 			<h2 class="text-lg text-white">Current Task</h2>
-			<p class="py-2 text-lg font-semibold text-yellow-300">{currentTask.text}</p>
+			<p class="py-2 text-2xl font-semibold text-yellow-300">{currentTask.text}</p>
 			<div class="flex h-[350px] max-h-[350px] justify-center">
 				<img
 					src={currentTask.image ?? `./default-task.png`}
